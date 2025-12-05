@@ -4,15 +4,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>STL-{{ shop.name }}</title>
-        <link rel="stylesheet" href="/assets/css/detail.css">
-        <script src="/assets/js/detail.js" defer></script>
+    <link rel="stylesheet" href="../assets/css/detail.css">
+    <script src="../assets/js/detail.js" defer></script>
     </head>
     <body>
         <header class="header">
-            <img src="/image/SnowTubeLunch.jpg" alt="SnowTubeLunch logo" class="logo">
+            <img src="../image/SnowTubeLunch.jpg" alt="SnowTubeLunch logo" class="logo">
         </header>
 
-        <button onclick="location.href='/'" class="home_button"><b>一覧へ戻る</b></button>
+    <button onclick="location.href='index.html'" class="home_button"><b>一覧へ戻る</b></button>
         <button class="edit_btn"
             data-shop-id="{{ shop.id }}"
             data-shop-name="{{ shop.name|e }}"
