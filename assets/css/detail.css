@@ -153,32 +153,46 @@ body
 @media (max-width: 600px) {
     body { font-size: 16px; padding-bottom: 120px; }
 
-    /* Buttons stack and become full-width for easier tapping */
+    /* header/logo */
+    .header { padding: 10px 12px; }
+    .logo { width: min(92%, 360px); max-width: 360px; height: auto; display: block; margin: 6px auto; }
+
+    /* Buttons: make them large and easy to tap; try two-across then stack on narrow screens */
     .home_button, .edit_btn {
         float: none;
-        display: block;
-        width: calc(100% - 32px);
-        margin: 12px auto;
+        display: inline-block;
+        width: calc(50% - 18px);
+        margin: 8px 9px;
         box-sizing: border-box;
         text-align: center;
+        padding: 12px 14px;
+        font-size: 16px;
     }
-    /* header/logo adjustments for small screens (detail page) */
-    .header { padding: 12px 8px; }
-    .logo { width: min(92%, 320px); max-width: 320px; height: auto; display: block; margin: 6px auto; }
+
+    /* If screen is very narrow, stack buttons full width */
+    @media (max-width: 360px) {
+        .home_button, .edit_btn { width: calc(100% - 32px); margin: 8px auto; display: block; }
+    }
 
     .detail_box {
-        width: 95%;
-        padding: 14px;
+        width: 96%;
+        padding: 16px;
         margin: 12px auto;
+        font-size: 16px;
     }
 
-    .detail_title { font-size: 22px; }
+    .detail_title { font-size: 24px; text-align: center; margin-bottom: 8px; }
+
+    /* shop info: wrap nicely and center */
+    .shop-info { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; font-size: 14px; color: #555; margin-top: 6px; }
+
+    .detail_box p { margin-bottom: 12px; line-height: 1.6; font-size: 16px; }
+
+    /* links should break and be tappable */
+    .detail_box a { word-break: break-all; color: royalblue; }
 
     /* Modal: align to top with some padding so keyboard doesn't cover fields */
-    .modal {
-        align-items: flex-start;
-        padding-top: 20px;
-    }
+    .modal { align-items: flex-start; padding-top: 20px; }
 
     .modal_content {
         width: 96%;
@@ -191,19 +205,15 @@ body
     }
 
     /* Form table -> stack for mobile */
-    .form_table, .form_table tr, .form_table th, .form_table td {
-        display: block;
-        width: 100%;
-    }
+    .form_table, .form_table tr, .form_table th, .form_table td { display: block; width: 100%; }
     .form_table th { text-align: left; padding-right: 0; margin-bottom: 6px; }
     .form_table td { margin-bottom: 12px; }
     .form_table textarea { min-height: 140px; }
-    /* larger touch targets on mobile */
-    .form_table input[type="text"], .form_table input[type="date"], .form_table textarea {
-        font-size: 16px;
-        padding: 12px;
-    }
 
+    /* increase input tap area */
+    .form_table input[type="text"], .form_table input[type="date"], .form_table textarea { font-size: 16px; padding: 12px; }
+
+    /* Form actions */
     .form_actions { text-align: center; }
     .form_actions .save_btn, #save_btn { width: 100%; padding: 12px 16px; font-size: 18px; }
 }
