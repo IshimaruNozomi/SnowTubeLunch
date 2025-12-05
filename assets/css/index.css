@@ -1,0 +1,184 @@
+.header
+{
+    background-color: rgba(169, 197, 249, 0.88);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+body
+{
+    font-family: 'Noto Sans JP', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: rgb(202, 236, 248);
+    margin: 0;
+    margin-bottom: 100px;
+}
+
+.create_btn
+{
+    background-color: royalblue;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    float: left;
+    margin: 20px;
+}
+
+
+.modal
+{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal_content
+{
+    background: rgba(169, 197, 249, 0.88);
+    padding: 20px 24px;
+    width: 90%;
+    max-width: 720px;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+.close_btn {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    cursor: pointer;
+    font-size: 40px;
+    color: #666;
+    padding: 4px 8px;
+}
+
+#submit_btn,
+.create_btn {
+    background-color: royalblue;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+.form_label
+{
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.form_table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 12px 6px;
+    margin-top: 8px;
+}
+.form_table td:first-child {
+    text-align: right;
+    vertical-align: top;
+    width: 30%;
+    padding-right: 12px;
+    font-weight: 600;
+}
+.form_table td:last-child {
+    width: 70%;
+}
+.form_table input[type="text"],
+.form_table input[type="date"],
+.form_table textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.form_table textarea { min-height: 90px; resize: vertical; }
+
+.form_actions { text-align: right; margin-top: 12px; }
+
+
+.shop-item {
+    border: 1px solid #ddd;
+    padding: 12px;
+    margin: 8px auto;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.shop-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: #222;
+}
+
+.shop-info {
+    color: #555;
+    margin-top: 6px;
+}
+
+#shop_list {
+    margin: 12px 20px 24px 20px;
+}
+
+.footer
+{
+    background-color: gray;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+/* Responsive tweaks for small screens */
+@media (max-width: 600px) {
+    body { font-size: 16px; }
+
+    .create_btn {
+        float: none;
+        display: block;
+        margin: 12px auto;
+    }
+
+    .shop-item {
+        width: 95%;
+        padding: 10px;
+        margin: 10px auto;
+    }
+
+    .shop-name { font-size: 18px; }
+
+    #shop_list { margin: 8px 8px 80px 8px; }
+
+    .modal_content {
+        width: 96%;
+        padding: 16px;
+        max-width: 640px;
+    }
+
+    /* Form table: stack labels above inputs on small screens */
+    .form_table, .form_table tr, .form_table th, .form_table td {
+        display: block;
+        width: 100%;
+    }
+    .form_table th { text-align: left; padding-right: 0; margin-bottom: 6px; }
+    .form_table td { margin-bottom: 12px; }
+
+    .form_actions { text-align: center; }
+    .form_actions .create_btn, #submit_btn { width: 100%; }
+}

@@ -1,0 +1,207 @@
+.header
+{
+    background-color: rgba(169, 197, 249, 0.88);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+body
+{
+    font-family: 'Noto Sans JP', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: rgb(202, 236, 248);
+    margin: 0;
+    margin-bottom: 100px;
+}
+
+.home_button, .edit_btn
+{
+    background-color: royalblue;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    float: left;
+    margin: 20px;
+}
+
+.detail_box
+{
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    width: 80%;
+    max-width: 800px;
+    font-size: 20px;
+}
+
+.detail_title
+{
+    font-size: 36px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 12px;
+}
+
+.modal
+{
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: none !important;
+    animation: none !important;
+}
+
+.modal_content
+{
+    background-color: rgba(169, 197, 249, 0.98);
+    margin: 0;
+    padding: 20px 24px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 720px;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    position: relative;
+    /* disable any transform/transition that could create slide effect */
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+}
+
+.close_btn {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    cursor: pointer;
+    font-size: 40px;
+    color: #666;
+    padding: 4px 8px;
+}
+
+.form_label
+{
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.form_table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 12px 6px;
+    margin-top: 8px;
+}
+.form_table th:first-child {
+    text-align: right;
+    vertical-align: top;
+    width: 30%;
+    padding-right: 12px;
+    font-weight: 600;
+}
+.form_table td:last-child {
+    width: 70%;
+}
+.form_table input[type="text"],
+.form_table input[type="date"],
+.form_table textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.form_table textarea { min-height: 90px; resize: vertical; }
+
+.form_actions { text-align: right; margin-top: 12px; }
+
+.form_actions .save_btn,
+#save_btn {
+    background-color: royalblue;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+.footer
+{
+    background-color: gray;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+/* Responsive tweaks for small screens */
+@media (max-width: 600px) {
+    body { font-size: 16px; padding-bottom: 96px; }
+
+    /* Buttons stack and become full-width for easier tapping */
+    .home_button, .edit_btn {
+        float: none;
+        display: block;
+        width: calc(100% - 32px);
+        margin: 12px auto;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .detail_box {
+        width: 95%;
+        padding: 14px;
+        margin: 12px auto;
+    }
+
+    .detail_title { font-size: 22px; }
+
+    /* Modal: align to top with some padding so keyboard doesn't cover fields */
+    .modal {
+        align-items: flex-start;
+        padding-top: 20px;
+    }
+
+    .modal_content {
+        width: 96%;
+        padding: 16px;
+        max-width: 640px;
+        /* limit height and allow inner scrolling for long forms */
+        max-height: calc(100vh - 140px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Form table -> stack for mobile */
+    .form_table, .form_table tr, .form_table th, .form_table td {
+        display: block;
+        width: 100%;
+    }
+    .form_table th { text-align: left; padding-right: 0; margin-bottom: 6px; }
+    .form_table td { margin-bottom: 12px; }
+    .form_table textarea { min-height: 120px; }
+
+    .form_actions { text-align: center; }
+    .form_actions .save_btn, #save_btn { width: 100%; }
+}
+
+/* preserve newlines in displayed text from textareas */
+.preserve {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}

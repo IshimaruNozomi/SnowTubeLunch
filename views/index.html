@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SnowTubeLunch</title>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../assets/css/index.css">
+        <script src="../assets/js/index.js" defer></script>
+    </head>
+    <body>
+        <header class="header">
+            <img src="/image/SnowTubeLunch.jpg" alt="SnowTubeLunch logo" class="logo">
+        </header>
+
+        <button id="create_btn" class="create_btn"><b>新規登録</b></button>
+
+        <h2>動画情報一覧</h2>
+        <div id="shop_list"></div>
+        
+        <div class="modal" id="modal">
+            <div class="modal_content">
+                <div class="close_btn" id="close_modal">×</div>
+
+                <h2>動画情報登録</h2>
+
+                <table class="form_table">
+                    <tr>
+                        <td><label for="posted_date" class="form_label">投稿日</label></td>
+                        <td><input type="date" id="posted_date"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="name" class="form_label">お店名前</label></td>
+                        <td><input type="text" id="name"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="genre" class="form_label">ジャンル</label></td>
+                        <td><input type="text" id="genre"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="url" class="form_label">お店URL</label></td>
+                        <td><input type="text" id="url"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="address" class="form_label">住所</label></td>
+                        <td><input type="text" id="address"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="station" class="form_label">最寄駅</label></td>
+                        <td><input type="text" id="station"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="members" class="form_label">メンバー</label></td>
+                        <td><input type="text" id="members"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="video_title" class="form_label">動画タイトル</label></td>
+                        <td><input type="text" id="video_title"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="video_url" class="form_label">動画URL</label></td>
+                        <td><input type="text" id="video_url"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="order_details" class="form_label">注文詳細</label></td>
+                        <td><textarea id="order_details"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><label for="episode_details" class="form_label">エピソード詳細</label></td>
+                        <td><textarea id="episode_details"></textarea></td>
+                    </tr>
+                </table>
+
+                <div class="form_actions">
+                    <button id="submit_btn">登録</button>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2025 SnowTubeLunch</p>
+        </footer>
+    </body>
+</html> 
