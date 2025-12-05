@@ -162,6 +162,9 @@ body
         box-sizing: border-box;
         text-align: center;
     }
+    /* header/logo adjustments for small screens (detail page) */
+    .header { padding: 12px 8px; }
+    .logo { width: min(92%, 320px); max-width: 320px; height: auto; display: block; margin: 6px auto; }
 
     .detail_box {
         width: 95%;

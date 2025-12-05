@@ -151,7 +151,8 @@ body
 
     /* header/logo adjustments for small screens */
     .header { padding: 12px 8px; }
-    .logo { max-width: 180px; height: auto; display: block; margin: 6px auto; }
+    /* make logo large but responsive on small screens */
+    .logo { width: min(92%, 320px); max-width: 320px; height: auto; display: block; margin: 6px auto; }
 
     .create_btn {
         float: none;
