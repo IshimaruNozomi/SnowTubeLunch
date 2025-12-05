@@ -29,19 +29,19 @@
         ><b>編集</b></button>
 
         <div class="detail_box">
-            <div class="detail_title"><b>{{ shop.name }}</b></div>
+            <div id="detail_name" class="detail_title"><b>{{ shop.name }}</b></div>
             <hr>
-            <p><b>ジャンル</b><br> {{ shop.genre }}</p>
-            <p><b>最寄駅</b><br> {{ shop.nearest_station }}</p>
-            <p><b>住所</b><br> {{ shop.address }}</p>
-            <p><b>店URL</b><br> <a href="{{ shop.url }}" target="_blank">{{ shop.url }}</a></p>
+            <p><b>ジャンル</b><br> <span id="detail_genre">{{ shop.genre }}</span></p>
+            <p><b>最寄駅</b><br> <span id="detail_nearest_station">{{ shop.nearest_station }}</span></p>
+            <p><b>住所</b><br> <span id="detail_address">{{ shop.address }}</span></p>
+            <p><b>店URL</b><br> <a id="detail_url" href="{{ shop.url }}" target="_blank">{{ shop.url }}</a></p>
             <hr>
-            <p><b>動画タイトル</b><br> {{ shop.video_title }}</p>
-            <p><b>投稿日</b><br> {{ shop.posted_date }}</p>
-            <p><b>動画URL</b><br> <a href="{{ shop.video_url }}" target="_blank">{{ shop.video_url }}</a></p>
-            <p><b>メンバー</b><br> {{ shop.members }}</p>
-            <p><b>注文詳細</b><br> <span class="preserve">{{ shop.order_detail | e }}</span></p>
-            <p><b>エピソード詳細</b><br> <span class="preserve">{{ shop.episode_detail | e }}</span></p>
+            <p><b>動画タイトル</b><br> <span id="detail_video_title">{{ shop.video_title }}</span></p>
+            <p><b>投稿日</b><br> <span id="detail_posted_date">{{ shop.posted_date }}</span></p>
+            <p><b>動画URL</b><br> <a id="detail_video_url" href="{{ shop.video_url }}" target="_blank">{{ shop.video_url }}</a></p>
+            <p><b>メンバー</b><br> <span id="detail_members">{{ shop.members }}</span></p>
+            <p><b>注文詳細</b><br> <span id="detail_order_detail" class="preserve">{{ shop.order_detail | e }}</span></p>
+            <p><b>エピソード詳細</b><br> <span id="detail_episode_detail" class="preserve">{{ shop.episode_detail | e }}</span></p>
         </div>
 
         <div id="edit_modal" class="modal">
@@ -108,5 +108,65 @@
         <footer class="footer">
             <p>&copy; 2025 SnowTubeLunch</p>
         </footer>
+        
+        <!-- Client-side filler for static hosting: when not running locally, load shops.json and populate by ?id= -->
+        <script>
+            (function(){
+                const hostname = window.location.hostname;
+                const isLocal = hostname === '127.0.0.1' || hostname === 'localhost' || hostname === '::1';
+                if (isLocal) return; // let server-rendered template work when running locally
+
+                // hide edit (no server) — registration/edit only available locally
+                const editBtn = document.querySelector('.edit_btn');
+                if (editBtn) editBtn.style.display = 'none';
+
+                // get id from query param
+                const params = new URLSearchParams(window.location.search);
+                const id = params.get('id');
+                if (!id) return;
+
+                fetch('../assets/data/shops.json')
+                    .then(r => {
+                        if (!r.ok) throw new Error('no static json');
+                        return r.json();
+                    })
+                    .then(list => {
+                        const numId = Number(id);
+                        const shop = list.find(s => Number(s.id) === numId || String(s.id) === id);
+                        if (!shop) return;
+
+                        const setText = (id, value) => {
+                            const el = document.getElementById(id);
+                            if (!el) return;
+                            if (el.tagName === 'A') {
+                                el.href = value || '#';
+                                el.textContent = value || '';
+                            } else {
+                                el.textContent = value || '';
+                            }
+                        };
+
+                        setText('detail_name', shop.name);
+                        setText('detail_genre', shop.genre);
+                        setText('detail_nearest_station', shop.nearest_station);
+                        setText('detail_address', shop.address);
+                        setText('detail_url', shop.url);
+                        setText('detail_video_title', shop.video_title);
+                        setText('detail_posted_date', shop.posted_date);
+                        setText('detail_video_url', shop.video_url);
+                        setText('detail_members', shop.members);
+                        // preserve newlines
+                        const od = document.getElementById('detail_order_detail');
+                        if (od) od.textContent = shop.order_detail || '';
+                        const ed = document.getElementById('detail_episode_detail');
+                        if (ed) ed.textContent = shop.episode_detail || '';
+
+                        document.title = `STL-${shop.name}`;
+                    })
+                    .catch(err => {
+                        console.warn('static detail load failed', err);
+                    });
+            })();
+        </script>
     </body>
 </html>
