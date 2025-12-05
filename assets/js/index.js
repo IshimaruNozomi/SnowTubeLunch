@@ -2,9 +2,20 @@ const create_btn = document.getElementById("create_btn");
 const modal = document.getElementById("modal");
 const close_modal = document.getElementById("close_modal");
 
-create_btn.addEventListener("click", () => {
-    modal.style.display = "flex";
-});
+// detect running environment: consider local when hostname is localhost or 127.0.0.1
+const hostname = window.location.hostname;
+const isLocal = hostname === '127.0.0.1' || hostname === 'localhost' || hostname === '::1';
+
+if (create_btn) {
+    if (!isLocal) {
+        // hide create button on static deployed site (read-only)
+        create_btn.style.display = 'none';
+    } else {
+        create_btn.addEventListener("click", () => {
+            modal.style.display = "flex";
+        });
+    }
+}
 
 close_modal.addEventListener("click", () => {
     modal.style.display = "none";
@@ -12,7 +23,8 @@ close_modal.addEventListener("click", () => {
 
 const submit_btn = document.getElementById("submit_btn");
 
-submit_btn.addEventListener("click", async () => {
+if (submit_btn && isLocal) {
+    submit_btn.addEventListener("click", async () => {
     const data = {
         posted_date: document.getElementById("posted_date").value,
         name: document.getElementById("name").value,
@@ -27,27 +39,37 @@ submit_btn.addEventListener("click", async () => {
         episode_detail: document.getElementById("episode_details").value
     };
 
-    try {
-        const response = await fetch("http://127.0.0.1:5000/add_shop",{
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-        });
+        try {
+            const response = await fetch("http://127.0.0.1:5000/add_shop",{
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            });
 
-        const result = await response.json();
-        alert(result.message);
+            const result = await response.json();
+            alert(result.message);
 
-        modal.style.display = "none";
-    } catch (err) {
-        console.error(err);
-        alert("Failed to submit: " + (err.message || err));
-    }
-});
+            modal.style.display = "none";
+        } catch (err) {
+            console.error(err);
+            alert("Failed to submit: " + (err.message || err));
+        }
+    });
+}
 
-fetch('http://127.0.0.1:5000/get_shops')
-    .then(response => response.json())
+// First try to load static JSON (deployed on GitHub Pages). If not found, fall back to local API.
+const staticPath = '../assets/data/shops.json';
+fetch(staticPath)
+    .then(response => {
+        if (!response.ok) throw new Error('no static');
+        return response.json();
+    })
+    .catch(() => {
+        // fallback to dynamic API (local dev)
+        return fetch('http://127.0.0.1:5000/get_shops').then(r => r.json());
+    })
     .then(data => {
         const list = document.getElementById("shop_list");
 
@@ -56,7 +78,15 @@ fetch('http://127.0.0.1:5000/get_shops')
             item.className = "shop-item";
 
             item.onclick = () => {
-                window.location.href = `/shop/${shop.id}`;
+                // prefer static detail page if present under views, otherwise link to API path
+                const detailPath = `../views/detail.html`;
+                // If using static JSON, we can't generate dynamic detail pages; link to views/detail.html with query param
+                if (!isLocal) {
+                    // open static detail page and pass id as query param so JS on detail page (if implemented) can read it
+                    window.location.href = `../views/detail.html?id=${shop.id}`;
+                } else {
+                    window.location.href = `/shop/${shop.id}`;
+                }
             };
 
             item.innerHTML =`
