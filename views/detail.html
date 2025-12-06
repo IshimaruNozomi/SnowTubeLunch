@@ -11,100 +11,102 @@
         <header class="header">
             <img src="../image/SnowTubeLunch.jpg" alt="SnowTubeLunch logo" class="logo">
         </header>
+        <div class="main">
 
-    <div class="top_actions">
-        <button onclick="location.href='index.html'" class="home_button"><b>一覧へ戻る</b></button>
-        <button class="edit_btn"
-            data-shop-id="{{ shop.id }}"
-            data-shop-name="{{ shop.name|e }}"
-            data-posted-date="{{ shop.posted_date }}"
-            data-genre="{{ shop.genre|e }}"
-            data-nearest-station="{{ shop.nearest_station|e }}"
-            data-address="{{ shop.address|e }}"
-            data-url="{{ shop.url|e }}"
-            data-members="{{ shop.members|e }}"
-            data-video-title="{{ shop.video_title|e }}"
-            data-video-url="{{ shop.video_url|e }}"
-            data-order-detail="{{ shop.order_detail|e }}"
-            data-episode-detail="{{ shop.episode_detail|e }}"
-        ><b>編集</b></button>
-    </div>
-
-        <div class="detail_box">
-            <div id="detail_name" class="detail_title"><b>{{ shop.name }}</b></div>
-            <hr>
-            <p><b>ジャンル</b><br> <span id="detail_genre">{{ shop.genre }}</span></p>
-            <p><b>最寄駅</b><br> <span id="detail_nearest_station">{{ shop.nearest_station }}</span></p>
-            <p><b>住所</b><br> <span id="detail_address">{{ shop.address }}</span></p>
-            <p><b>店URL</b><br> <a id="detail_url" href="{{ shop.url }}" target="_blank">{{ shop.url }}</a></p>
-            <hr>
-            <p><b>動画タイトル</b><br> <span id="detail_video_title">{{ shop.video_title }}</span></p>
-            <p><b>投稿日</b><br> <span id="detail_posted_date">{{ shop.posted_date }}</span></p>
-            <p><b>動画URL</b><br> <a id="detail_video_url" href="{{ shop.video_url }}" target="_blank">{{ shop.video_url }}</a></p>
-            <p><b>メンバー</b><br> <span id="detail_members">{{ shop.members }}</span></p>
-            <p><b>注文詳細</b><br> <span id="detail_order_detail" class="preserve">{{ shop.order_detail | e }}</span></p>
-            <p><b>エピソード詳細</b><br> <span id="detail_episode_detail" class="preserve">{{ shop.episode_detail | e }}</span></p>
-        </div>
-
-        <div id="edit_modal" class="modal">
-            <div class="modal_content">
-                <div id="close_modal" class="close_btn">&times;</div>
-                <h2>動画情報編集</h2>
-                <form id="edit_form">
-                    <input type="hidden" id="edit_id">
-
-                    <table class="form_table">
-                        <tr>
-                            <th><label for="edit_shop_name" class="form_label">お店名前</label></th>
-                            <td><input type="text" id="edit_shop_name"></td>
-                        </tr>
-                        <tr>
-                            <th><label for="edit_genre" class="form_label">ジャンル</label></th>
-                            <td><input type="text" id="edit_genre"></td>
-                        </tr>
-                        <tr>
-                            <th><label for="edit_url" class="form_label">お店URL</label></th>
-                            <td><input type="text" id="edit_url"></td>
-                        </tr>
-                        <tr>
-                            <th><label for="edit_address" class="form_label">住所</label></th>
-                            <td><input type="text" id="edit_address"></td>
-                        </tr>
-                        <tr>
-                            <th><label for="edit_nearest_station" class="form_label">最寄駅</label></th>
-                            <td><input type="text" id="edit_nearest_station"></td>
-                        </tr>
-                        <tr>
-                            <th><label for="edit_video_title" class="form_label">動画タイトル</label></th>
-                            <td><input type="text" id="edit_video_title"></td>
-                        </tr>
-                        <tr>
-                            <th><label for="edit_posted_date" class="form_label">投稿日</label></th>
-                            <td><input type="date" id="edit_posted_date"></td>
-                        </tr>
-                        <tr>
-                            <th><label for="edit_video_url" class="form_label">動画URL</label></th>
-                            <td><input type="text" id="edit_video_url"></td>
-                        </tr>
-                        <tr>
-                            <th><label for="edit_members" class="form_label">メンバー</label></th>
-                            <td><input type="text" id="edit_members"></td>
-                        </tr>
-                        <tr>
-                            <th><label for="edit_order_detail" class="form_label">注文詳細</label></th>
-                            <td><textarea id="edit_order_detail"></textarea></td>
-                        </tr>
-                        <tr>
-                            <th><label for="edit_episode_detail" class="form_label">エピソード詳細</label></th>
-                            <td><textarea id="edit_episode_detail"></textarea></td>
-                        </tr>
-                    </table>
-
-                    <div class="form_actions">
-                        <button type="button" id="save_btn" class="save_btn"><b>保存</b></button>
-                    </div>
-                </form>
+            <div class="top_actions">
+                <button onclick="location.href='index.html'" class="home_button"><b>一覧へ戻る</b></button>
+                <button class="edit_btn"
+                    data-shop-id="{{ shop.id }}"
+                    data-shop-name="{{ shop.name|e }}"
+                    data-posted-date="{{ shop.posted_date }}"
+                    data-genre="{{ shop.genre|e }}"
+                    data-nearest-station="{{ shop.nearest_station|e }}"
+                    data-address="{{ shop.address|e }}"
+                    data-url="{{ shop.url|e }}"
+                    data-members="{{ shop.members|e }}"
+                    data-video-title="{{ shop.video_title|e }}"
+                    data-video-url="{{ shop.video_url|e }}"
+                    data-order-detail="{{ shop.order_detail|e }}"
+                    data-episode-detail="{{ shop.episode_detail|e }}"
+                ><b>編集</b></button>
             </div>
+
+                <div class="detail_box">
+                    <div id="detail_name" class="detail_title"><b>{{ shop.name }}</b></div>
+                    <hr>
+                    <p><b>ジャンル</b><br> <span id="detail_genre">{{ shop.genre }}</span></p>
+                    <p><b>最寄駅</b><br> <span id="detail_nearest_station">{{ shop.nearest_station }}</span></p>
+                    <p><b>住所</b><br> <span id="detail_address">{{ shop.address }}</span></p>
+                    <p><b>店URL</b><br> <a id="detail_url" href="{{ shop.url }}" target="_blank">{{ shop.url }}</a></p>
+                    <hr>
+                    <p><b>動画タイトル</b><br> <span id="detail_video_title">{{ shop.video_title }}</span></p>
+                    <p><b>投稿日</b><br> <span id="detail_posted_date">{{ shop.posted_date }}</span></p>
+                    <p><b>動画URL</b><br> <a id="detail_video_url" href="{{ shop.video_url }}" target="_blank">{{ shop.video_url }}</a></p>
+                    <p><b>メンバー</b><br> <span id="detail_members">{{ shop.members }}</span></p>
+                    <p><b>注文詳細</b><br> <span id="detail_order_detail" class="preserve">{{ shop.order_detail | e }}</span></p>
+                    <p><b>エピソード詳細</b><br> <span id="detail_episode_detail" class="preserve">{{ shop.episode_detail | e }}</span></p>
+                </div>
+
+                <div id="edit_modal" class="modal">
+                    <div class="modal_content">
+                        <div id="close_modal" class="close_btn">&times;</div>
+                        <h2>動画情報編集</h2>
+                        <form id="edit_form">
+                            <input type="hidden" id="edit_id">
+
+                            <table class="form_table">
+                                <tr>
+                                    <th><label for="edit_shop_name" class="form_label">お店名前</label></th>
+                                    <td><input type="text" id="edit_shop_name"></td>
+                                </tr>
+                                <tr>
+                                    <th><label for="edit_genre" class="form_label">ジャンル</label></th>
+                                    <td><input type="text" id="edit_genre"></td>
+                                </tr>
+                                <tr>
+                                    <th><label for="edit_url" class="form_label">お店URL</label></th>
+                                    <td><input type="text" id="edit_url"></td>
+                                </tr>
+                                <tr>
+                                    <th><label for="edit_address" class="form_label">住所</label></th>
+                                    <td><input type="text" id="edit_address"></td>
+                                </tr>
+                                <tr>
+                                    <th><label for="edit_nearest_station" class="form_label">最寄駅</label></th>
+                                    <td><input type="text" id="edit_nearest_station"></td>
+                                </tr>
+                                <tr>
+                                    <th><label for="edit_video_title" class="form_label">動画タイトル</label></th>
+                                    <td><input type="text" id="edit_video_title"></td>
+                                </tr>
+                                <tr>
+                                    <th><label for="edit_posted_date" class="form_label">投稿日</label></th>
+                                    <td><input type="date" id="edit_posted_date"></td>
+                                </tr>
+                                <tr>
+                                    <th><label for="edit_video_url" class="form_label">動画URL</label></th>
+                                    <td><input type="text" id="edit_video_url"></td>
+                                </tr>
+                                <tr>
+                                    <th><label for="edit_members" class="form_label">メンバー</label></th>
+                                    <td><input type="text" id="edit_members"></td>
+                                </tr>
+                                <tr>
+                                    <th><label for="edit_order_detail" class="form_label">注文詳細</label></th>
+                                    <td><textarea id="edit_order_detail"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <th><label for="edit_episode_detail" class="form_label">エピソード詳細</label></th>
+                                    <td><textarea id="edit_episode_detail"></textarea></td>
+                                </tr>
+                            </table>
+
+                            <div class="form_actions">
+                                <button type="button" id="save_btn" class="save_btn"><b>保存</b></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
         </div>
 
         <footer class="footer">
