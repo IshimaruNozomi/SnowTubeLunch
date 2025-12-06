@@ -54,18 +54,18 @@ body
 /* Search & Sort controls */
 .search_controls {
     background-color: rgba(255, 255, 255, 0.6);
-    padding: 12px 16px;
+    padding: 24px;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     /* center container and limit width so it looks consistent on large screens */
-    max-width: 920px;
+    max-width: 80%;
     width: calc(100% - 32px);
     display: flex;
     gap: 12px;
     align-items: center;
     flex-wrap: wrap;
     margin: 12px auto; /* CENTER the block horizontally */
-    justify-content: flex-start; /* keep inner items left-aligned so reset button can push to right */
+    justify-content: flex-start;
 }
 
 /* inner wrapper holds the main controls and flexes to take remaining space */
@@ -82,6 +82,7 @@ body
     border-radius: 6px;
     border: 1px solid #ccc;
     font-size: 14px;
+    margin: 10px;
 }
 
 /* Right-align reset button in row layout */
@@ -92,7 +93,7 @@ body
     font-size: 24px;
     font-weight: 700;
     color: #222;
-    margin-left: 15%;
+    margin-left: 10%;
     margin-bottom: 10px;
 }
 
@@ -101,7 +102,7 @@ body
     font-size: 28px;
     font-weight: 700;
     color: #222;
-    margin-left: 15%;
+    margin-left: 10%;
     margin-bottom: 20px;
 }
 
@@ -236,6 +237,12 @@ body
     .header { padding: 12px 8px; }
     /* make logo large but responsive on small screens */
     .logo { width: min(92%, 640px); max-width: 640px; height: auto; display: block; margin: 6px auto; }
+
+    .h3
+    {
+        font-size: 20px;
+        margin-left: 10%;
+    }
 
     .create_btn {
         float: none;
