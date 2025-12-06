@@ -12,6 +12,7 @@ html {
     -webkit-text-size-adjust: 100%; /* Safari, Chrome */
     -ms-text-size-adjust: 100%; /* IE Mobile */
     width: 100%;
+    margin-right: 0;
 }
 
 /* Mobile background video: hidden by default, enabled on small screens */
