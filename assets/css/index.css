@@ -51,12 +51,36 @@ body
     margin: 20px;
 }
 
+/* Search & Sort controls */
+.search_controls {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    max-width: 60%;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 12px 5px;
+}
+.search_controls label { font-weight: 600; margin-right: 6px; }
+.search_controls select, .search_controls input[type="text"] {
+    padding: 6px 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* Right-align reset button in row layout */
+.search_controls .reset_btn { margin-left: auto; }
+
 .index_title
 {
     font-size: 28px;
     font-weight: 700;
     color: #222;
-    margin-left: 30px;
+    margin-left: 15%;
     margin-bottom: 20px;
 }
 
@@ -94,7 +118,8 @@ body
 }
 
 #submit_btn,
-.create_btn {
+.create_btn,
+.reset_btn {
     background-color: royalblue;
     color: white;
     font-size: 16px;
@@ -209,6 +234,13 @@ body
     }
 
     .shop-name { font-size: 18px; }
+
+    /* Stack search controls on narrow screens */
+    .search_controls { flex-direction: column; gap: 10px; margin: 8px; }
+    .search_controls label { display: block; }
+    .search_controls select, .search_controls input[type="text"] { width: 100%; }
+    /* On column layout, ensure reset button aligns to right */
+    .search_controls .reset_btn { margin-left: 0; align-self: flex-end; }
 
     #shop_list { margin: 8px 8px 30px 8px; }
 
