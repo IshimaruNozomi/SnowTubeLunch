@@ -2,7 +2,7 @@
 {
     background-color: rgba(169, 197, 249, 0.88);
     color: white;
-    padding: 10px;
+    padding: 12px 0;
     text-align: center;
     width: 100%;
 }
@@ -50,6 +50,7 @@ body
     border-radius: 8px;
     box-shadow: 0 8px 24px rgba(0,0,0,0.2);
     position: relative;
+    margin: 0 auto;
 }
 
 .close_btn {
@@ -131,7 +132,10 @@ body
 }
 
 #shop_list {
-    margin: 12px 20px 24px 20px;
+    /* center the list container and give small horizontal padding */
+    margin: 12px auto 80px;
+    max-width: 920px;
+    padding: 0 8px;
 }
 
 .footer
@@ -183,6 +187,7 @@ body
         max-height: calc(100vh - 140px);
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
+        margin: 0 auto;
     }
 
     /* Form table: stack labels above inputs on small screens */
