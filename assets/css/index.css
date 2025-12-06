@@ -57,12 +57,15 @@ body
     padding: 16px;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    max-width: 60%;
+    max-width: 65%;
     display: flex;
     gap: 8px;
     align-items: center;
     flex-wrap: wrap;
-    margin: 12px 5px;
+    /* center the whole control block horizontally */
+    margin: 12px;
+    /* keep items left-aligned inside the block so reset button (margin-left:auto) moves to the far right */
+    justify-content: flex-start;
 }
 .search_controls label { font-weight: 600; margin-right: 6px; }
 .search_controls select, .search_controls input[type="text"] {
@@ -74,6 +77,15 @@ body
 
 /* Right-align reset button in row layout */
 .search_controls .reset_btn { margin-left: auto; }
+
+.h3
+{
+    font-size: 24px;
+    font-weight: 700;
+    color: #222;
+    margin-left: 15%;
+    margin-bottom: 10px;
+}
 
 .index_title
 {
