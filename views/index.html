@@ -24,21 +24,23 @@
         <h3>Search & Sort</h3>
         <!-- Search & Sort controls -->
         <div id="search_controls" class="search_controls">
-            <label for="genre_filter">ジャンル：</label>
-            <select id="genre_filter">
-                <option value="">すべて</option>
-            </select>
+            <div class="search_inner">
+                <label for="genre_filter">ジャンル：</label>
+                <select id="genre_filter">
+                    <option value="">すべて</option>
+                </select>
 
-            <div>
-            <label for="member_filter">メンバー：</label>
-            <input id="member_filter" type="text" placeholder="メンバー名で部分一致">
-            </div>
-            <div>
-            <label for="sort_order">並び替え：</label>
-            <select id="sort_order">
-                <option value="desc">投稿日 新しい順</option>
-                <option value="asc">投稿日 古い順</option>
-            </select>
+                <div>
+                    <label for="member_filter">メンバー：</label>
+                    <input id="member_filter" type="text" placeholder="メンバー名で部分一致">
+                </div>
+                <div>
+                    <label for="sort_order">並び替え：</label>
+                    <select id="sort_order">
+                        <option value="desc">投稿日 新しい順</option>
+                        <option value="asc">投稿日 古い順</option>
+                    </select>
+                </div>
             </div>
             <button id="reset_filters" class="reset_btn"><b>リセット</b></button>
         </div>
