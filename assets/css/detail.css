@@ -29,6 +29,10 @@ body
     margin: 20px;
 }
 
+/* center the top action buttons when wrapped in .top_actions */
+.top_actions { text-align: center; margin: 8px 0; }
+.top_actions .home_button, .top_actions .edit_btn { float: none; display: inline-block; margin: 8px 10px; }
+
 .detail_box
 {
     background: #fff;

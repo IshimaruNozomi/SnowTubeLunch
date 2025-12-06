@@ -12,7 +12,8 @@
             <img src="../image/SnowTubeLunch.jpg" alt="SnowTubeLunch logo" class="logo">
         </header>
 
-    <button onclick="location.href='index.html'" class="home_button"><b>一覧へ戻る</b></button>
+    <div class="top_actions">
+        <button onclick="location.href='index.html'" class="home_button"><b>一覧へ戻る</b></button>
         <button class="edit_btn"
             data-shop-id="{{ shop.id }}"
             data-shop-name="{{ shop.name|e }}"
@@ -27,6 +28,7 @@
             data-order-detail="{{ shop.order_detail|e }}"
             data-episode-detail="{{ shop.episode_detail|e }}"
         ><b>編集</b></button>
+    </div>
 
         <div class="detail_box">
             <div id="detail_name" class="detail_title"><b>{{ shop.name }}</b></div>
