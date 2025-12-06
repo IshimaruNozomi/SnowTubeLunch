@@ -168,7 +168,7 @@ body
     .logo { width: min(92%, 360px); max-width: 360px; height: auto; display: block; margin: 6px auto; }
 
     .main {
-        margin-left: 20px;
+        margin-left: 10px;
     }
 
     /* Buttons: make them large and easy to tap; try two-across then stack on narrow screens */
