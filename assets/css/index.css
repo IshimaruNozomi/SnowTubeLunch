@@ -13,6 +13,19 @@ html {
     -ms-text-size-adjust: 100%;
 }
 
+/* Mobile background video: hidden by default, enabled on small screens */
+#bg-video {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none;
+}
+
 body
 {
     font-family: 'Noto Sans JP', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
@@ -130,7 +143,7 @@ body
     width: 80%;
     max-width: 800px;
     border-radius: 8px;
-    background-color: #fff;
+    background-color: rgb(255, 255, 255, 0.6);
     box-shadow: 0 2px 6px rgba(0,0,0,0.04);
 }
 
@@ -167,10 +180,13 @@ body
 @media (max-width: 600px) {
     body { font-size: 16px; padding-bottom: 10px; }
 
+    /* enable background video on mobile */
+    #bg-video { display: block; }
+
     /* header/logo adjustments for small screens */
     .header { padding: 12px 8px; }
     /* make logo large but responsive on small screens */
-    .logo { width: min(92%, 320px); max-width: 320px; height: auto; display: block; margin: 6px auto; }
+    .logo { width: min(92%, 640px); max-width: 640px; height: auto; display: block; margin: 6px auto; }
 
     .create_btn {
         float: none;
