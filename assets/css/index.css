@@ -166,7 +166,7 @@ body
     }
 
     .shop-item {
-        width: 95%;
+        width: 90%;
         padding: 10px;
         margin: 10px auto;
     }
@@ -176,7 +176,7 @@ body
     #shop_list { margin: 8px 8px 80px 8px; }
 
     .modal_content {
-        width: 96%;
+        width: 90%;
         padding: 16px;
         max-width: 640px;
         /* limit height and allow inner scrolling for long forms */

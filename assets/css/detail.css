@@ -175,7 +175,7 @@ body
     }
 
     .detail_box {
-        width: 96%;
+        width: 90%;
         padding: 16px;
         margin: 12px auto;
         font-size: 16px;
@@ -195,7 +195,7 @@ body
     .modal { align-items: flex-start; padding-top: 20px; }
 
     .modal_content {
-        width: 96%;
+        width: 90%;
         padding: 16px;
         max-width: 640px;
         /* limit height and allow inner scrolling for long forms */
