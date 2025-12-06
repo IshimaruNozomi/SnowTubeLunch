@@ -2,8 +2,8 @@
 {
     background-color: rgba(169, 197, 249, 0.5);
     color: white;
-    padding: 12px 0;
     text-align: center;
+    padding: 5px;
     width: 100%;
 }
 
@@ -11,6 +11,7 @@
 html {
     -webkit-text-size-adjust: 100%; /* Safari, Chrome */
     -ms-text-size-adjust: 100%; /* IE Mobile */
+    width: 100%;
 }
 
 /* Mobile background video: hidden by default, enabled on small screens */

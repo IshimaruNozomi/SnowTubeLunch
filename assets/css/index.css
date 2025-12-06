@@ -2,8 +2,8 @@
 {
     background-color: rgba(169, 197, 249, 0.5);
     color: white;
-    padding: 12px 0;
     text-align: center;
+    padding: 5px;
     width: 100%;
 }
 
@@ -35,6 +35,7 @@ body
     background-color: rgb(202, 236, 248);
     margin: 0;
     margin-bottom: 100px;
+    width: 100%;
 }
 
 .create_btn
