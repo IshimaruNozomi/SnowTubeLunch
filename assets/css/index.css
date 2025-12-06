@@ -1,6 +1,6 @@
 .header
 {
-    background-color: rgba(169, 197, 249, 0.88);
+    background-color: rgba(169, 197, 249, 0.5);
     color: white;
     padding: 12px 0;
     text-align: center;
@@ -11,6 +11,7 @@
 html {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
+    width: 100%;
 }
 
 /* Mobile background video: hidden by default, enabled on small screens */
