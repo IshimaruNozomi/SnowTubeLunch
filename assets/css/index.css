@@ -7,6 +7,12 @@
     width: 100%;
 }
 
+/* Prevent mobile browsers (iOS Safari) from auto-adjusting text size / zooming unexpectedly */
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
 body
 {
     font-family: 'Noto Sans JP', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
