@@ -91,7 +91,9 @@ fetch(staticPath)
 
             item.innerHTML =`
                 <div class="shop-name">${shop.name}</div>
-                <div class="shop-info">　${shop.genre}　　|　　${shop.nearest_station}　　|　　${shop.members}</div>`;  
+                <div class="shop-meta">投稿日: ${shop.posted_date} ・ ${shop.genre}</div>
+                <div class="shop-info">${shop.nearest_station} | ${shop.members}</div>
+                <div class="shop-video">${shop.video_title ? '▶ ' + shop.video_title : ''}</div>`;  
             list.appendChild(item);
         });
     });
