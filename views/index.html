@@ -21,24 +21,26 @@
 
         <button id="create_btn" class="create_btn"><b>新規登録</b></button>
 
-        <h3>Search & Sort</h3>
-        <!-- Search & Sort controls -->
-        <div id="search_controls" class="search_controls">
-            <div class="search_inner">
-                <label for="genre_filter">ジャンル：</label>
-                <select id="genre_filter">
-                    <option value="">すべて</option>
-                </select>
-                    <label for="member_filter">メンバー：</label>
-                    <input id="member_filter" type="text" placeholder="メンバー名で部分一致">
-                    <label for="sort_order">並び替え：</label>
-                    <select id="sort_order">
-                        <option value="desc">投稿日 新しい順</option>
-                        <option value="asc">投稿日 古い順</option>
+        <div class="search">
+            <h3>Search & Sort</h3>
+            <div id="search_controls" class="search_controls">
+                <div class="search_inner">
+                    <label for="genre_filter">ジャンル：</label>
+                    <select id="genre_filter">
+                        <option value="">すべて</option>
                     </select>
+                        <label for="member_filter">メンバー：</label>
+                        <input id="member_filter" type="text" placeholder="メンバー名で部分一致">
+                        <label for="sort_order">並び替え：</label>
+                        <select id="sort_order">
+                            <option value="desc">投稿日 新しい順</option>
+                            <option value="asc">投稿日 古い順</option>
+                        </select>
+                </div>
+                <button id="reset_filters" class="reset_btn"><b>リセット</b></button>
             </div>
-            <button id="reset_filters" class="reset_btn"><b>リセット</b></button>
         </div>
+
         <h2 class="index_title">動画情報一覧</h2>
         <div id="shop_list"></div>
         

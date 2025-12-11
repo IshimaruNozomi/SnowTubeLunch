@@ -88,6 +88,11 @@ body
 /* Right-align reset button in row layout */
 .search_controls .reset_btn { margin-left: auto; }
 
+.class
+{
+    margin-left: 100px;
+}
+
 .h3
 {
     font-size: 24px;
