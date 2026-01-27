@@ -40,7 +40,7 @@ if (submit_btn && isLocal) {
     };
 
         try {
-            const response = await fetch("http://127.0.0.1:5000/add_shop",{
+            const response = await fetch("http://127.0.0.1:5001/add_shop",{
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -143,7 +143,7 @@ function attachFilterHandlers(){
 
 fetch(staticPath)
     .then(response => { if (!response.ok) throw new Error('no static'); return response.json(); })
-    .catch(() => fetch('http://127.0.0.1:5000/get_shops').then(r => r.json()))
+    .catch(() => fetch('http://127.0.0.1:5001/get_shops').then(r => r.json()))
     .then(data => {
         shopsData = Array.isArray(data) ? data : [];
         populateGenreOptions(shopsData);
